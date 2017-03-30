@@ -1,0 +1,23 @@
+.idea
+.vagrant
+.DS_Store
+nbproject
+*.tmproj
+*.swp~
+.bundle
+
+### FuelPHP template
+fuel/app/logs/*/*/*
+fuel/app/cache/*/*
+
+/docs
+/fuel/core
+/fuel/packages
+/fuel/vendor
+/vendor
+
+/fuel/app/config/*/db.php
+/fuel/app/config/db.php
+
+/public/phpmyadmin
+

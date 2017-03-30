@@ -1,0 +1,30 @@
+<?php
+/**
+ * The staging database settings. These get merged with the global settings.
+ */
+
+if(getenv('CLEARDB_DATABASE_URL')){
+	// CLEARDB_DATABASE_URLが設定されていれば、herokuモード
+	$cleardb = parse_url(getenv('CLEARDB_DATABASE_URL'));
+	return array(
+		'default' => array(
+			'connection'  => array(
+				'dsn'        => 'mysql:host='.$cleardb['host'].';dbname='.$cleardb['path'],
+				'username'   => $cleardb['user'],
+				'password'   => $cleardb['pass'],
+			),
+		),
+	);
+}else{
+	return array(
+		'default' => array(
+			'connection'  => array(
+				'dsn'        => 'mysql:host=localhost;dbname=dbname',
+				'username'   => 'fuel_app',
+				'password'   => 'super_secret_password',
+			),
+		),
+	);
+}
+
+

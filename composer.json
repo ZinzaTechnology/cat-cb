@@ -1,0 +1,99 @@
+{
+    "name": "fuel/fuel",
+    "type": "project",
+    "description": "FuelPHP is a simple, flexible, community driven PHP 5.3+ framework, based on the best ideas of other frameworks, with a fresh start!",
+    "keywords": [
+        "application",
+        "website",
+        "development",
+        "framework",
+        "PHP"
+    ],
+    "license": "MIT",
+    "repositories": {
+        "0": {
+            "type": "vcs",
+            "url": "https://github.com/fuel/docs"
+        },
+        "1": {
+            "type": "vcs",
+            "url": "https://github.com/fuel/core"
+        },
+        "2": {
+            "type": "vcs",
+            "url": "https://github.com/fuel/auth"
+        },
+        "3": {
+            "type": "vcs",
+            "url": "https://github.com/fuel/email"
+        },
+        "4": {
+            "type": "vcs",
+            "url": "https://github.com/fuel/oil"
+        },
+        "5": {
+            "type": "vcs",
+            "url": "https://github.com/fuel/orm"
+        },
+        "6": {
+            "type": "vcs",
+            "url": "https://github.com/fuel/parser"
+        },
+        "7": {
+            "type": "vcs",
+            "url": "https://github.com/goosys/Fuel-Package-TraitOrmFormat"
+        },
+        "packagist": {
+            "type": "composer",
+            "url": "http://packagist.jp"
+        }
+    },
+    "require": {
+        "php": ">=5.3.3",
+        "composer/installers": "~1.0",
+        "fuel/docs": "dev-1.7/master",
+        "fuel/core": "dev-1.7/master",
+        "fuel/auth": "dev-1.7/master",
+        "fuel/email": "dev-1.7/master",
+        "fuel/oil": "dev-1.7/master",
+        "fuel/orm": "dev-1.7/master",
+        "fuel/parser": "dev-1.7/master",
+        "trait-orm-format": "dev-master",
+        "fuelphp/upload": "2.0.2",
+        "monolog/monolog": "1.5.*",
+        "michelf/php-markdown": "1.4.0",
+        "ext-mbstring": "^0.0.0"
+    },
+    "suggest": {
+        "dwoo/dwoo": "Allow Dwoo templating with the Parser package",
+        "mustache/mustache": "Allow Mustache templating with the Parser package",
+        "smarty/smarty": "Allow Smarty templating with the Parser package",
+        "twig/twig": "Allow Twig templating with the Parser package",
+        "pyrocms/lex": "Allow Lex templating with the Parser package",
+        "mthaml/mthaml": "Allow Haml templating with Twig supports with the Parser package"
+    },
+    "config": {
+        "bin-dir": "vendor/bin",
+        "vendor-dir": "fuel/vendor",
+        "secure-http": false
+    },
+    "extra": {
+        "installer-paths": {
+            "fuel/{$name}": [
+                "fuel/core"
+            ],
+            "{$name}": [
+                "fuel/docs"
+            ]
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php oil r install"
+        ]
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "heroku/heroku-buildpack-php": "^89.0"
+    }
+}
